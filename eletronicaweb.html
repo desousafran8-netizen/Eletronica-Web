@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletrônica Patoense - Cadastro/OS</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <header>
+        <h1>Eletrônica Patoense</h1>
+        <p>Telefone: (99) 98480-8301 Tecnico Danyelson</p>
+    </header>
+
+    <main>
+        <h2>Registro de Cliente e Serviço</h2>
+        <form id="cadastro-form">
+
+            <fieldset>
+                <legend>Dados do Cliente</legend>
+                <div class="form-group">
+                    <label for="nome-cliente">Nome do Cliente:</label>
+                    <input type="text" id="nome-cliente" name="nome-cliente" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone-cliente">Telefone:</label>
+                    <input type="tel" id="telefone-cliente" name="telefone-cliente" pattern="[0-9]{11}" placeholder="99984808301" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados do Produto/Serviço</legend>
+                <div class="form-group">
+                    <label for="produto-servico">Produto/Serviço:</label>
+                    <input type="text" id="produto-servico" name="produto-servico" placeholder="Ex: Conserto de TV" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelo-produto">Modelo (se aplicável):</label>
+                    <input type="text" id="modelo-produto" name="modelo-produto" placeholder="Ex: TV Samsung UN40F5000">
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações/Defeito:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                </div>
+            </fieldset>
+
+            <div class="buttons">
+                <button type="submit" id="gerar-nota-btn">Gerar Nota/Ordem de Serviço</button>
+                <button type="reset">Limpar Formulário</button>
+            </div>
+        </form>
+
+        <div id="nota-fiscal-area" style="display:none;">
+            <h3>Nota de Serviço - Eletrônica Patrône</h3>
+            <div id="nota-conteudo"></div>
+            <button onclick="window.print()">Imprimir Nota (ou Salvar PDF)</button>
+            <button onclick="window.location.reload()">Novo Cadastro</button>
+        </div>
+    </main>
+    
+    <script src="script.js"></script> 
+</body>
+</html>
